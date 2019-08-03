@@ -3,18 +3,23 @@
 <div *ngFor="let post of posts">
   <a href="{{post.url}}" target="_blank">{{post.title}}</a>
 </div>
-<div>
-  <label>Title:
-    <textarea [(ngModel)]="editingPost.title" cols="60"></textarea>
-  </label>
-</div>
-<div>
-  <label>URL:
-    <textarea [(ngModel)]="editingPost.url" cols="60"></textarea>
-  </label>
-</div>
-<div>
-  <input (click)="addPost()" type="button" value="Add">
-</div>
+<form (submit)="addPost()">
+  <fieldset>
+    <legend>New Post</legend>
+    <div>
+      <label>Title:
+        <textarea [(ngModel)]="editingPost.title" cols="60" name="new-post-title"></textarea>
+      </label>
+    </div>
+    <div>
+      <label>URL:
+        <textarea [(ngModel)]="editingPost.url" cols="60" name="new-post-url"></textarea>
+      </label>
+    </div>
+    <div>
+      <button type="submit">Add</button>
+    </div>
+  </fieldset>
+</form>
 <hr>
 @CodeGym, 2019
