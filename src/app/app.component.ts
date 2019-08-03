@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {POSTS} from './POSTS';
-import {Post} from './Post';
+import {POSTS} from './core/POSTS';
+import {Post} from './core/Post';
 
 @Component({
   selector: 'app-root',
