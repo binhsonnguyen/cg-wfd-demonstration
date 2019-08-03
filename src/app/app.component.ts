@@ -1,15 +1,13 @@
 import {Component} from '@angular/core';
 import {POSTS} from './POSTS';
+import {Post} from './Post';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  editingPost = {
-    title: '',
-    url: ''
-  };
+  editingPost = new Post();
 
   posts = POSTS;
 }
