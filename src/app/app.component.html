@@ -3,5 +3,18 @@
 <div>
   <a href="{{post.url}}" target="_blank">{{post.title}}</a>
 </div>
+<div>
+  <label>Title:
+    <textarea cols="60" [value]="post.title"></textarea>
+  </label>
+</div>
+<div>
+  <label>URL:
+    <textarea cols="60" [value]="post.url"></textarea>
+  </label>
+</div>
+<div>
+  <input type="button" value="Update">
+</div>
 <hr>
 @CodeGym, 2019
