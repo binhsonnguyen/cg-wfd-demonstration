@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Post} from '../core/Post';
 
 @Component({
@@ -6,5 +6,5 @@ import {Post} from '../core/Post';
   templateUrl: './posts.component.html'
 })
 export class PostsComponent {
-  private posts: Post[];
+  @Input() posts: Post[];
 }
