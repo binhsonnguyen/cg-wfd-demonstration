@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {POSTS} from './core/POSTS';
 import {Post} from './core/Post';
 
@@ -6,13 +6,18 @@ import {Post} from './core/Post';
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  editingPost = new Post();
+export class AppComponent implements OnInit {
+  editingPost: Post;
+  posts: Post[];
 
-  posts = POSTS;
+  ngOnInit(): void {
+    this.editingPost = new Post();
+    this.posts = POSTS;
+  }
 
   addPost() {
     this.posts.push(this.editingPost);
     this.editingPost = new Post();
   }
+
 }
