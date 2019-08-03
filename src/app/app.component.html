@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="container">
-  <app-posts></app-posts>
+  <app-posts [posts]="posts"></app-posts>
   <form (submit)="addPost()" class="form m-2">
     <fieldset>
       <legend>New Post</legend>
