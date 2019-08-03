@@ -12,4 +12,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.posts = POSTS;
   }
+
+  addPost(post: Post) {
+    this.posts.push(post);
+  }
 }
