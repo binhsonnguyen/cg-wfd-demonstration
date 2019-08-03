@@ -6,5 +6,10 @@ import {POSTS} from './POSTS';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  editingPost = {
+    title: '',
+    url: ''
+  };
+
   posts = POSTS;
 }
