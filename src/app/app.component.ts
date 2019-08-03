@@ -11,5 +11,7 @@ export class AppComponent {
   };
 
   updatePost() {
+    this.post.title = document.getElementById('post-title').value;
+    this.post.url = document.getElementById('post-url').value;
   }
 }
