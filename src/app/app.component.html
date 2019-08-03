@@ -5,13 +5,16 @@
 </div>
 <div>
   <label>Title:
-    <textarea cols="60" [(ngModel)]="editingPost.title"></textarea>
+    <textarea [(ngModel)]="editingPost.title" cols="60"></textarea>
   </label>
 </div>
 <div>
   <label>URL:
-    <textarea cols="60" [(ngModel)]="editingPost.url"></textarea>
+    <textarea [(ngModel)]="editingPost.url" cols="60"></textarea>
   </label>
+</div>
+<div>
+  <input (click)="addPost()" type="button" value="Add">
 </div>
 <hr>
 @CodeGym, 2019
