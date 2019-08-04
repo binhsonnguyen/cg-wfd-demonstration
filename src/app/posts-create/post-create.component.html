@@ -9,18 +9,18 @@
      tabindex="-1">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <form #editingForm="ngForm" (ngSubmit)="editingForm.valid && emitPost()">
+      <form (ngSubmit)="editingForm.valid && emitPost()" [formGroup]="editingForm">
         <div class="modal-header">
           <h5 class="modal-title" id="modal-post-news-label">Contribute a news</h5>
         </div>
         <div class="modal-body">
           <div class="form-group">
             <label for="new-post-title">Title</label>
-            <input #title="ngModel"
-                   [(ngModel)]="editingPost.title"
+            <input [(ngModel)]="editingPost.title"
                    [class.is-invalid]="(!title.pristine || editingForm.submitted) && title.invalid"
                    aria-label="Title"
                    class="form-control"
+                   formControlName="title"
                    id="new-post-title"
                    minlength="6"
                    name="new-post-title"
@@ -34,11 +34,11 @@
           </div>
           <div class="form-group">
             <label for="new-post-url">URL </label>
-            <input #url="ngModel"
-                   [(ngModel)]="editingPost.url"
+            <input [(ngModel)]="editingPost.url"
                    [class.is-invalid]="(!url.pristine || editingForm.submitted) && url.invalid"
                    aria-label="URL"
                    class="form-control"
+                   formControlName="url"
                    id="new-post-url"
                    minlength="6"
                    name="new-post-url"
@@ -51,9 +51,9 @@
             </div>
           </div>
           <div class="form-group form-check">
-            <input #term="ngModel"
-                   [class.is-invalid]="(!term.pristine || editingForm.submitted) && term.invalid"
+            <input [class.is-invalid]="(!term.pristine || editingForm.submitted) && term.invalid"
                    class="form-check-input"
+                   formControlName="sworn"
                    id="new-post-terms"
                    name="new-post-terms"
                    ngModel
