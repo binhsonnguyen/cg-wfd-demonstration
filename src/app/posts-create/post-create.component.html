@@ -22,10 +22,8 @@
                    class="form-control"
                    formControlName="title"
                    id="new-post-title"
-                   minlength="6"
                    name="new-post-title"
                    placeholder="Title"
-                   required
                    type="text">
             <div *ngIf="fields.title.invalid" class="invalid-feedback">
               <div *ngIf="fields.title.errors.required">Title is required</div>
@@ -40,10 +38,8 @@
                    class="form-control"
                    formControlName="url"
                    id="new-post-url"
-                   minlength="6"
                    name="new-post-url"
                    placeholder="URL"
-                   required
                    type="url">
             <div *ngIf="fields.url.invalid" class="invalid-feedback">
               <div *ngIf="fields.url.errors.required">URL is required</div>
@@ -57,7 +53,6 @@
                    id="new-post-terms"
                    name="new-post-terms"
                    ngModel
-                   required
                    type="checkbox">
             <label for="new-post-terms">I swear this is full of knowledge.</label>
             <div *ngIf="fields.sworn.invalid" class="invalid-feedback">

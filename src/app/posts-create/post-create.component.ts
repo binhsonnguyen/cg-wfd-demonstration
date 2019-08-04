@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Post} from '../core/Post';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-post-create',
@@ -19,9 +19,9 @@ export class PostCreateComponent implements OnInit {
 
   ngOnInit() {
     this.editingForm = new FormGroup({
-      title: new FormControl(''),
-      url: new FormControl(''),
-      sworn: new FormControl(false)
+      title: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      url: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      sworn: new FormControl(false, [Validators.required])
     });
     this.refresh();
   }
