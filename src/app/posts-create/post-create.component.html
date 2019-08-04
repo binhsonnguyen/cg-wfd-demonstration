@@ -16,14 +16,14 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="new-post-title">Title</label>
-            <input [(ngModel)]="editingPost.title" aria-label="Title" class="form-control" id="new-post-title"
+            <input #title [(ngModel)]="editingPost.title" aria-label="Title" class="form-control" id="new-post-title"
                    name="new-post-title"
                    placeholder="Title"
                    type="text">
           </div>
           <div class="form-group">
             <label for="new-post-url">URL </label>
-            <input [(ngModel)]="editingPost.url" aria-label="URL" class="form-control" id="new-post-url"
+            <input #url [(ngModel)]="editingPost.url" aria-label="URL" class="form-control" id="new-post-url"
                    name="new-post-url"
                    placeholder="URL"
                    type="url">
@@ -34,6 +34,9 @@
           <button (click)="emitPost()" data-dismiss="modal" class="btn btn-primary" type="button">Submit</button>
         </div>
       </form>
+      <hr>
+      <pre class="small">{{title.className}}</pre>
+      <pre class="small">{{url.className}}</pre>
     </div>
   </div>
 </div>
