@@ -10,6 +10,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class PostCreateComponent implements OnInit {
   editingForm: FormGroup;
   editingPost: Post;
+  submitted = false;
   @Output() postEmit: EventEmitter<Post> = new EventEmitter<Post>();
 
   ngOnInit() {
@@ -22,6 +23,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   emitPost() {
+    this.submitted = true;
     this.postEmit.emit(this.editingPost);
     this.refresh();
   }
@@ -31,6 +33,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   private refresh() {
+    this.submitted = false;
     this.editingPost = new Post();
   }
 
