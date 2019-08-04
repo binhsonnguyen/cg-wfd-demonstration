@@ -1,0 +1,37 @@
+<button class="btn btn-primary m-2" data-target="#modal-post-news" data-toggle="modal" type="button">
+  Contribute
+</button>
+<div aria-hidden="true"
+     aria-labelledby="modal-post-news-label"
+     class="modal fade"
+     id="modal-post-news"
+     role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-post-news-label">Contribute a news</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="new-post-title">Title</label>
+          <input [(ngModel)]="editingPost.title" aria-label="Title" class="form-control" id="new-post-title"
+                 name="new-post-title"
+                 placeholder="Title"
+                 type="text">
+        </div>
+        <div class="form-group">
+          <label for="new-post-url">URL </label>
+          <input [(ngModel)]="editingPost.url" aria-label="URL" class="form-control" id="new-post-url"
+                 name="new-post-url"
+                 placeholder="URL"
+                 type="text">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+        <button (click)="emitPost()" data-dismiss="modal" class="btn btn-primary" type="button">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
