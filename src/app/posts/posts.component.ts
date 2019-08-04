@@ -8,4 +8,12 @@ import {Post} from '../core/Post';
 })
 export class PostsComponent {
   @Input() posts: Post[];
+
+  kiss(post: Post) {
+    if (!!post.kissed) {
+      post.kissed++;
+    } else {
+      post.kissed = 1;
+    }
+  }
 }
