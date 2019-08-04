@@ -4,8 +4,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-post-create',
-  templateUrl: './post-create.component.html',
-  styleUrls: ['./post-create.component.css']
+  templateUrl: './post-create.component.html'
 })
 export class PostCreateComponent implements OnInit {
   editingForm: FormGroup;
