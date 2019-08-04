@@ -18,7 +18,7 @@
             <label for="new-post-title">Title</label>
             <input #title="ngModel"
                    [(ngModel)]="editingPost.title"
-                   [class.is-invalid]="title.invalid"
+                   [class.is-invalid]="(!title.pristine || editingForm.submitted) && title.invalid"
                    aria-label="Title"
                    class="form-control"
                    id="new-post-title"
@@ -34,7 +34,7 @@
             <label for="new-post-url">URL </label>
             <input #url="ngModel"
                    [(ngModel)]="editingPost.url"
-                   [class.is-invalid]="url.invalid"
+                   [class.is-invalid]="(!url.pristine || editingForm.submitted) && url.invalid"
                    aria-label="URL"
                    class="form-control"
                    id="new-post-url"
