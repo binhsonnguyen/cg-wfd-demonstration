@@ -5,7 +5,10 @@ import {FormsModule} from '@angular/forms';
 import {FooterComponent} from './shared/footer/footer.component';
 import {HeaderComponent} from './shared/header/header.component';
 import {PostsComponent} from './posts/posts.component';
-import { PostCreateComponent } from './posts-create/post-create.component';
+import {PostCreateComponent} from './posts-create/post-create.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faKiss} from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,13 @@ import { PostCreateComponent } from './posts-create/post-create.component';
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     FormsModule
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor() {
+    library.add(faKiss);
+  }
 }
