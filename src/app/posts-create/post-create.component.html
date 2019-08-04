@@ -16,7 +16,11 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="new-post-title">Title</label>
-            <input #title="ngModel" [(ngModel)]="editingPost.title" aria-label="Title" class="form-control" id="new-post-title"
+            <input #title="ngModel"
+                   [(ngModel)]="editingPost.title"
+                   aria-label="Title"
+                   class="form-control"
+                   id="new-post-title"
                    name="new-post-title"
                    placeholder="Title"
                    required
@@ -27,7 +31,11 @@
           </div>
           <div class="form-group">
             <label for="new-post-url">URL </label>
-            <input #url="ngModel" [(ngModel)]="editingPost.url" aria-label="URL" class="form-control" id="new-post-url"
+            <input #url="ngModel"
+                   [(ngModel)]="editingPost.url"
+                   aria-label="URL"
+                   class="form-control"
+                   id="new-post-url"
                    name="new-post-url"
                    placeholder="URL"
                    required
