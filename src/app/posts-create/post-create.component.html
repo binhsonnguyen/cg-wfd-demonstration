@@ -17,7 +17,7 @@
           <div class="form-group">
             <label for="new-post-title">Title</label>
             <input [(ngModel)]="editingPost.title"
-                   [class.is-invalid]="(!title.pristine || editingForm.submitted) && title.invalid"
+                   [class.is-invalid]="!editingForm.controls['title'].pristine && editingForm.controls['title'].invalid"
                    aria-label="Title"
                    class="form-control"
                    formControlName="title"
@@ -27,15 +27,15 @@
                    placeholder="Title"
                    required
                    type="text">
-            <div *ngIf="title.invalid" class="invalid-feedback">
-              <div *ngIf="title.errors.required">Title is required</div>
-              <div *ngIf="title.errors.minlength">Title is too short.</div>
+            <div *ngIf="editingForm.controls['title'].invalid" class="invalid-feedback">
+              <div *ngIf="editingForm.controls['title'].errors.required">Title is required</div>
+              <div *ngIf="editingForm.controls['title'].errors.minlength">Title is too short.</div>
             </div>
           </div>
           <div class="form-group">
             <label for="new-post-url">URL </label>
             <input [(ngModel)]="editingPost.url"
-                   [class.is-invalid]="(!url.pristine || editingForm.submitted) && url.invalid"
+                   [class.is-invalid]="!editingForm.controls['url'].pristine && editingForm.controls['url'].invalid"
                    aria-label="URL"
                    class="form-control"
                    formControlName="url"
@@ -45,13 +45,13 @@
                    placeholder="URL"
                    required
                    type="url">
-            <div *ngIf="url.invalid" class="invalid-feedback">
-              <div *ngIf="url.errors.required">URL is required</div>
-              <div *ngIf="url.errors.minlength">URL is too short.</div>
+            <div *ngIf="editingForm.controls['url'].invalid" class="invalid-feedback">
+              <div *ngIf="editingForm.controls['url'].errors.required">URL is required</div>
+              <div *ngIf="editingForm.controls['url'].errors.minlength">URL is too short.</div>
             </div>
           </div>
           <div class="form-group form-check">
-            <input [class.is-invalid]="(!term.pristine || editingForm.submitted) && term.invalid"
+            <input [class.is-invalid]="!editingForm.controls['sworn'].pristine && editingForm.controls['sworn'].invalid"
                    class="form-check-input"
                    formControlName="sworn"
                    id="new-post-terms"
@@ -60,8 +60,8 @@
                    required
                    type="checkbox">
             <label for="new-post-terms">I swear this is full of knowledge.</label>
-            <div *ngIf="term.invalid" class="invalid-feedback">
-              <div *ngIf="term.errors.required">You need to swear.</div>
+            <div *ngIf="editingForm.controls['sworn'].invalid" class="invalid-feedback">
+              <div *ngIf="editingForm.controls['sworn'].errors.required">You need to swear.</div>
             </div>
           </div>
         </div>
