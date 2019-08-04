@@ -26,6 +26,10 @@ export class PostCreateComponent implements OnInit {
     this.refresh();
   }
 
+  get fields() {
+    return this.editingForm.controls;
+  }
+
   private refresh() {
     this.editingPost = new Post();
   }
