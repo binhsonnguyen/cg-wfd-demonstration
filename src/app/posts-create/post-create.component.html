@@ -25,6 +25,7 @@
                    name="new-post-title"
                    placeholder="Title"
                    required
+                   maxlength="128"
                    type="text">
             <div *ngIf="title.invalid" class="invalid-feedback">
               Title required.
@@ -41,6 +42,7 @@
                    name="new-post-url"
                    placeholder="URL"
                    required
+                   maxlength="256"
                    type="url">
             <div *ngIf="url.invalid" class="invalid-feedback">
               URL required.
