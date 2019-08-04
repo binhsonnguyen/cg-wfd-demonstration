@@ -9,7 +9,7 @@
      tabindex="-1">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <form #editingForm="ngForm" (submit)="emitPostIfValid(editingForm)">
+      <form #editingForm="ngForm" (submit)="editingForm.valid && emitPost()">
         <div class="modal-header">
           <h5 class="modal-title" id="modal-post-news-label">Contribute a news</h5>
         </div>
@@ -18,16 +18,16 @@
             <label for="new-post-title">Title</label>
             <input #title [(ngModel)]="editingPost.title" aria-label="Title" class="form-control" id="new-post-title"
                    name="new-post-title"
-                   required
                    placeholder="Title"
+                   required
                    type="text">
           </div>
           <div class="form-group">
             <label for="new-post-url">URL </label>
             <input #url [(ngModel)]="editingPost.url" aria-label="URL" class="form-control" id="new-post-url"
                    name="new-post-url"
-                   required
                    placeholder="URL"
+                   required
                    type="url">
           </div>
         </div>

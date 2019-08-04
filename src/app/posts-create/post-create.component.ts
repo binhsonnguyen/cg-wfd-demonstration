@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Post} from '../core/Post';
-import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-post-create',
@@ -15,18 +14,13 @@ export class PostCreateComponent implements OnInit {
     this.refresh();
   }
 
-  emitPostIfValid(editingForm: NgForm) {
-    if (editingForm.valid) {
-      this.emitPost();
-    }
+  emitPost() {
+    this.postEmit.emit(this.editingPost);
+    this.refresh();
   }
 
   private refresh() {
     this.editingPost = new Post();
   }
 
-  private emitPost() {
-    this.postEmit.emit(this.editingPost);
-    this.refresh();
-  }
 }
