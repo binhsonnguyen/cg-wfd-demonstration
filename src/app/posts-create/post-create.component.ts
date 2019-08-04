@@ -10,10 +10,15 @@ export class PostCreateComponent implements OnInit {
   @Output() postEmit: EventEmitter<Post> = new EventEmitter<Post>();
 
   ngOnInit() {
-    this.editingPost = new Post();
+    this.refresh();
   }
 
   emitPost() {
     this.postEmit.emit(this.editingPost);
+    this.refresh();
+  }
+
+  private refresh() {
+    this.editingPost = new Post();
   }
 }
