@@ -4,9 +4,7 @@
   </div>
   <div class="card-footer input-group input-group-sm">
     <div class="input-group-prepend">
-      <a (click)="kiss(post)" class="input-group-text" href="javascript:void(0);" role="button">
-        <fa-icon [icon]="['far', 'kiss']"></fa-icon>
-      </a>
+      <app-kisslet (kissEmit)="increaseKissedCount(post)" [post]="post"></app-kisslet>
     </div>
     <div class="input-group-append">
       <span class="input-group-text kissed">{{post.kissed || 0}}</span>
