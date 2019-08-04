@@ -13,6 +13,10 @@ export class PostCreateComponent implements OnInit {
   submitted = false;
   @Output() postEmit: EventEmitter<Post> = new EventEmitter<Post>();
 
+  get fields() {
+    return this.editingForm.controls;
+  }
+
   ngOnInit() {
     this.editingForm = new FormGroup({
       title: new FormControl(''),
@@ -22,19 +26,23 @@ export class PostCreateComponent implements OnInit {
     this.refresh();
   }
 
-  emitPost() {
+  onSubmit() {
     this.submitted = true;
-    this.postEmit.emit(this.editingPost);
-    this.refresh();
+
+    if (this.editingForm.invalid) {
+      return;
+    }
+
+    this.emitPost();
   }
 
-  get fields() {
-    return this.editingForm.controls;
+  private emitPost() {
+    this.postEmit.emit(this.editingPost);
+    this.refresh();
   }
 
   private refresh() {
     this.submitted = false;
     this.editingPost = new Post();
   }
-
 }

@@ -9,7 +9,7 @@
      tabindex="-1">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <form (ngSubmit)="editingForm.valid && emitPost()" [formGroup]="editingForm">
+      <form (ngSubmit)="onSubmit()" [formGroup]="editingForm">
         <div class="modal-header">
           <h5 class="modal-title" id="modal-post-news-label">Contribute a news</h5>
         </div>
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" data-dismiss="modal" type="button" (click)="refresh()">Close</button>
+          <button (click)="refresh()" class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
           <button class="btn btn-primary" type="submit">Submit</button>
         </div>
       </form>
