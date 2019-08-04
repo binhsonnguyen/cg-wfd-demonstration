@@ -2,7 +2,14 @@
   <div class="card-body">
     <a class="card-title" href="{{post.url}}" target="_blank">{{post.title}}</a>
   </div>
-  <div class="card-footer">
-    <a role="button" href="#"><fa-icon [icon]="['far', 'kiss']"></fa-icon></a>
+  <div class="card-footer input-group input-group-sm">
+    <div class="input-group-prepend">
+      <a class="input-group-text" href="#" role="button">
+        <fa-icon [icon]="['far', 'kiss']"></fa-icon>
+      </a>
+    </div>
+    <div class="input-group-append">
+      <span class="input-group-text kissed">{{post.kissed || 0}}</span>
+    </div>
   </div>
 </div>
