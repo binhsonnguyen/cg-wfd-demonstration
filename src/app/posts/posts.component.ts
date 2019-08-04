@@ -3,7 +3,8 @@ import {Post} from '../core/Post';
 
 @Component({
   selector: 'app-posts',
-  templateUrl: './posts.component.html'
+  templateUrl: './posts.component.html',
+  styleUrls: ['./posts.component.css']
 })
 export class PostsComponent {
   @Input() posts: Post[];
