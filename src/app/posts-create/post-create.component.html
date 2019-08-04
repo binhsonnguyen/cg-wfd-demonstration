@@ -18,6 +18,7 @@
             <label for="new-post-title">Title</label>
             <input #title [(ngModel)]="editingPost.title" aria-label="Title" class="form-control" id="new-post-title"
                    name="new-post-title"
+                   required
                    placeholder="Title"
                    type="text">
           </div>
@@ -25,6 +26,7 @@
             <label for="new-post-url">URL </label>
             <input #url [(ngModel)]="editingPost.url" aria-label="URL" class="form-control" id="new-post-url"
                    name="new-post-url"
+                   required
                    placeholder="URL"
                    type="url">
           </div>
