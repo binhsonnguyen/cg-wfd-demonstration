@@ -63,6 +63,10 @@ export class PostService {
     return this.posts;
   }
 
+  fetch(id: number): Post {
+    return this.posts.find(value => value.id === id);
+  }
+
   save(post: Post) {
     post.id = this.autoIncreasementId++;
     this.posts.push(post);
