@@ -14,8 +14,10 @@ export class PostCommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.post = this.postService.fetch(+id);
+    this.activatedRoute.paramMap.subscribe(snapshotParams => {
+      const id = snapshotParams.get('id');
+      this.post = this.postService.fetch(+id);
+    });
   }
 
   increaseKissedCount(post: Post) {
