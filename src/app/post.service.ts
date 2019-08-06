@@ -11,7 +11,27 @@ export class PostService {
       id: this.autoIncreasementId++,
       title: 'The Evolution of Async JavaScript: From Callbacks, to Promises, to Async/Await',
       url: 'https://medium.freecodecamp.org/the-evolution-of-async-javascript-from-callbacks-to-promises-to-async-await-e73b047f2f40',
-      kissed: 1920
+      kissed: 1920,
+      comments: [
+        {
+          id: this.autoIncreasementId++,
+          content: 'Good to consulting.',
+          author: 'An Duong Vuong',
+          kissed: 17
+        },
+        {
+          id: this.autoIncreasementId++,
+          content: 'So how the evolution of multi-shot bow?',
+          author: 'My Chau',
+          kissed: 11
+        },
+        {
+          id: this.autoIncreasementId++,
+          content: 'Greate question!',
+          author: 'Trong Thuy',
+          kissed: 3
+        },
+      ]
     },
     {
       id: this.autoIncreasementId++,
