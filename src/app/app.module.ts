@@ -10,9 +10,9 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {faKiss} from '@fortawesome/free-regular-svg-icons';
 import {KissletComponent} from './shared/kisslet/kisslet.component';
 import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
-import {RouterModule} from '@angular/router';
 import {PostsContributeComponent} from './posts/posts-contribute/posts-contribute.component';
 import {PostCommentsComponent} from './posts/post-comments/post-comments.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,24 +30,7 @@ import {PostCommentsComponent} from './posts/post-comments/post-comments.compone
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: PostsHomeComponent
-      },
-      {
-        path: 'news',
-        component: PostsHomeComponent
-      },
-      {
-        path: 'news/:id',
-        component: PostCommentsComponent
-      },
-      {
-        path: 'contrib',
-        component: PostsContributeComponent
-      }
-    ])
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
