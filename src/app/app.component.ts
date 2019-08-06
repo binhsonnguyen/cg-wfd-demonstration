@@ -7,7 +7,11 @@ import {PostService} from './post.service';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  private postService: PostService = new PostService();
+  private postService: PostService;
+
+  constructor(postService: PostService) {
+    this.postService = postService;
+  }
 
   get posts() {
     return this.postService.fetchAll();
