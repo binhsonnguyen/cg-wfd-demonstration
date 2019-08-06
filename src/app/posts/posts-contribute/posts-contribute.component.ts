@@ -43,5 +43,9 @@ export class PostsContributeComponent implements OnInit {
   private refresh() {
     this.submitted = false;
     this.editingPost = new Post();
+    this.submitted = false;
+    this.editingForm.markAsPristine();
+    this.editingForm.markAsUntouched();
+    this.editingForm.updateValueAndValidity();
   }
 }
