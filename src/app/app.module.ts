@@ -36,6 +36,10 @@ import {PostsContributeComponent} from './posts/posts-contribute/posts-contribut
         component: PostsHomeComponent
       },
       {
+        path: 'news',
+        component: PostsHomeComponent
+      },
+      {
         path: 'contrib',
         component: PostsContributeComponent
       }
