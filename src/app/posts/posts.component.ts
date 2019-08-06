@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Post} from '../core/Post';
+import {PostService} from '../post.service';
 
 @Component({
   selector: 'app-posts',
@@ -8,11 +9,10 @@ import {Post} from '../core/Post';
 export class PostsComponent {
   @Input() posts: Post[];
 
+  constructor(private postService: PostService) {
+  }
+
   increaseKissedCount(post: Post) {
-    if (!!post.kissed) {
-      post.kissed++;
-    } else {
-      post.kissed = 1;
-    }
+    this.postService.kiss(post.id);
   }
 }
