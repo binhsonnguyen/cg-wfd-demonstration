@@ -15,6 +15,6 @@ export class AppComponent {
   }
 
   addPost(post: Post) {
-    this.posts.push(post);
+    this.postService.save(post);
   }
 }
