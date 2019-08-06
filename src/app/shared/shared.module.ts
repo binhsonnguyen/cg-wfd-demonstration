@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FooterComponent} from './footer/footer.component';
 import {HeaderComponent} from './header/header.component';
 import {KissletComponent} from './kisslet/kisslet.component';
+import {SharedRoutingModule} from './shared-routing.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {KissletComponent} from './kisslet/kisslet.component';
     KissletComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedRoutingModule
   ]
 })
 export class SharedModule {
