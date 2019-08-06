@@ -9,7 +9,7 @@ import {PostCreateComponent} from './posts-create/post-create.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faKiss} from '@fortawesome/free-regular-svg-icons';
-import { KissletComponent } from './kisslet/kisslet.component';
+import {KissletComponent} from './kisslet/kisslet.component';
 
 @NgModule({
   declarations: [
