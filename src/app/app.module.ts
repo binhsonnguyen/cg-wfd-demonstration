@@ -12,6 +12,7 @@ import {faKiss} from '@fortawesome/free-regular-svg-icons';
 import {KissletComponent} from './shared/kisslet/kisslet.component';
 import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
 import {RouterModule} from '@angular/router';
+import {PostsContributeComponent} from './posts/posts-contribute/posts-contribute.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {RouterModule} from '@angular/router';
     PostsListComponent,
     PostCreateComponent,
     KissletComponent,
-    PostsHomeComponent
+    PostsHomeComponent,
+    PostsContributeComponent
   ],
   imports: [
     BrowserModule,
