@@ -11,6 +11,7 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {faKiss} from '@fortawesome/free-regular-svg-icons';
 import {KissletComponent} from './shared/kisslet/kisslet.component';
 import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   bootstrap: [AppComponent]
 })
