@@ -19,5 +19,15 @@
       <p class="small mb-0">{{comment.content}}</p>
       <footer class="blockquote-footer"><span class="small">{{comment.author}}</span></footer>
     </blockquote>
+    <div class="input-group input-group-sm">
+      <div class="input-group-prepend">
+        <a (click)="kissComment(comment)" class="input-group-text" href="javascript:void(0);" role="button">
+          <fa-icon [icon]="['far', 'kiss']"></fa-icon>
+        </a>
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text kissed">{{+comment.kissed}}</span>
+      </div>
+    </div>
   </div>
 </div>
