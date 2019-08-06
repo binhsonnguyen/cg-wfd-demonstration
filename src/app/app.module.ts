@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FooterComponent} from './shared/footer/footer.component';
 import {HeaderComponent} from './shared/header/header.component';
-import {PostsComponent} from './posts/posts.component';
+import {PostsListComponent} from './posts-list/posts-list.component';
 import {PostCreateComponent} from './posts-create/post-create.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
@@ -16,7 +16,7 @@ import {KissletComponent} from './kisslet/kisslet.component';
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    PostsComponent,
+    PostsListComponent,
     PostCreateComponent,
     KissletComponent
   ],

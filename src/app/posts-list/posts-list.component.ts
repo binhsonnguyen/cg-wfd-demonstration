@@ -3,10 +3,10 @@ import {Post} from '../core/Post';
 import {PostService} from '../post.service';
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html'
+  selector: 'app-posts-list',
+  templateUrl: './posts-list.component.html'
 })
-export class PostsComponent {
+export class PostsListComponent {
   @Input() posts: Post[];
 
   constructor(private postService: PostService) {
