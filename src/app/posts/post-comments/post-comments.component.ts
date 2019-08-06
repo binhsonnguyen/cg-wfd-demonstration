@@ -18,4 +18,7 @@ export class PostCommentsComponent implements OnInit {
     this.post = this.postService.fetch(+id);
   }
 
+  increaseKissedCount(post: Post) {
+    this.postService.kiss(post.id);
+  }
 }
