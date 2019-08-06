@@ -10,7 +10,6 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faKiss} from '@fortawesome/free-regular-svg-icons';
 import {KissletComponent} from './kisslet/kisslet.component';
-import {PostService} from './post.service';
 
 @NgModule({
   declarations: [
@@ -27,10 +26,7 @@ import {PostService} from './post.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  bootstrap: [AppComponent],
-  providers: [
-    PostService
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor() {
