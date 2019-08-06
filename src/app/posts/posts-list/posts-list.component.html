@@ -2,12 +2,14 @@
   <div class="card-body">
     <a class="card-title" href="{{post.url}}" target="_blank">{{post.title}}</a>
   </div>
-  <div class="card-footer input-group input-group-sm">
-    <div class="input-group-prepend">
-      <app-kisslet (kissEmit)="increaseKissedCount(post)" [post]="post"></app-kisslet>
-    </div>
-    <div class="input-group-append">
-      <span class="input-group-text kissed">{{post.kissed || 0}}</span>
+  <div class="card-footer">
+    <div class="input-group input-group-sm">
+      <div class="input-group-prepend">
+        <app-kisslet (kissEmit)="increaseKissedCount(post)" [post]="post"></app-kisslet>
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text kissed">{{post.kissed || 0}}</span>
+      </div>
     </div>
   </div>
 </div>
