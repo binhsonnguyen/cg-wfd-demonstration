@@ -10,6 +10,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faKiss} from '@fortawesome/free-regular-svg-icons';
 import {KissletComponent} from './shared/kisslet/kisslet.component';
+import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {KissletComponent} from './shared/kisslet/kisslet.component';
     HeaderComponent,
     PostsListComponent,
     PostCreateComponent,
-    KissletComponent
+    KissletComponent,
+    PostsHomeComponent
   ],
   imports: [
     BrowserModule,
