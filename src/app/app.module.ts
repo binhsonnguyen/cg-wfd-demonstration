@@ -10,6 +10,7 @@ import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
 import {PostsContributeComponent} from './posts/posts-contribute/posts-contribute.component';
 import {PostCommentsComponent} from './posts/post-comments/post-comments.component';
 import {AppRoutingModule} from './app-routing.module';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {AppRoutingModule} from './app-routing.module';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })
