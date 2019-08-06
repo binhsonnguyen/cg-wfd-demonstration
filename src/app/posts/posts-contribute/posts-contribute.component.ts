@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Post} from '../../core/Post';
+import {PostService} from '../../post.service';
 
 @Component({
   selector: 'app-posts-contribute',
@@ -11,6 +12,9 @@ export class PostsContributeComponent implements OnInit {
   editingPost: Post;
   submitted = false;
   @Output() postEmit: EventEmitter<Post> = new EventEmitter<Post>();
+
+  constructor(private postService: PostService) {
+  }
 
   get fields() {
     return this.editingForm.controls;
@@ -32,11 +36,7 @@ export class PostsContributeComponent implements OnInit {
       return;
     }
 
-    this.emitPost();
-  }
-
-  private emitPost() {
-    this.postEmit.emit(this.editingPost);
+    this.postService.save(this.editingPost);
     this.refresh();
   }
 
