@@ -12,6 +12,7 @@ import {KissletComponent} from './shared/kisslet/kisslet.component';
 import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
 import {RouterModule} from '@angular/router';
 import {PostsContributeComponent} from './posts/posts-contribute/posts-contribute.component';
+import {PostCommentsComponent} from './posts/post-comments/post-comments.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {PostsContributeComponent} from './posts/posts-contribute/posts-contribut
     PostsListComponent,
     KissletComponent,
     PostsHomeComponent,
-    PostsContributeComponent
+    PostsContributeComponent,
+    PostCommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,10 @@ import {PostsContributeComponent} from './posts/posts-contribute/posts-contribut
       {
         path: 'news',
         component: PostsHomeComponent
+      },
+      {
+        path: 'news/:id',
+        component: PostCommentsComponent
       },
       {
         path: 'contrib',
