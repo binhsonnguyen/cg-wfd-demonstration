@@ -34,6 +34,10 @@ import {PostsContributeComponent} from './posts/posts-contribute/posts-contribut
       {
         path: '',
         component: PostsHomeComponent
+      },
+      {
+        path: 'contrib',
+        component: PostsContributeComponent
       }
     ])
   ],
