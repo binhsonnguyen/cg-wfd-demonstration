@@ -49,5 +49,12 @@ export class PostService {
   }
 
   kiss(id: number) {
+    const origin = this.posts.find(value => value.id === id);
+    if (!!origin) {
+      if (!origin.kissed) {
+        origin.kissed = 0;
+      }
+      origin.kissed++;
+    }
   }
 }
