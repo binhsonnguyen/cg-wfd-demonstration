@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Post} from '../core/Post';
+import {Post} from '../../core/Post';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
