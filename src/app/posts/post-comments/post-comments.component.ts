@@ -1,23 +1,29 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Post} from '../../core/Post';
 import {PostService} from '../../post.service';
 import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-post-comments',
   templateUrl: './post-comments.component.html'
 })
-export class PostCommentsComponent implements OnInit {
+export class PostCommentsComponent implements OnInit, OnDestroy {
   post: Post;
+  private routerParamMapSubscription: Subscription;
 
   constructor(private postService: PostService, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(snapshotParams => {
+    this.routerParamMapSubscription = this.activatedRoute.paramMap.subscribe(snapshotParams => {
       const id = snapshotParams.get('id');
       this.post = this.postService.fetch(+id);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.routerParamMapSubscription.unsubscribe();
   }
 
   increaseKissedCount(post: Post) {
