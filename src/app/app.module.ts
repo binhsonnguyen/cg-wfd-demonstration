@@ -28,7 +28,7 @@ import {RouterModule} from '@angular/router';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule.forRoot([])
   ],
   bootstrap: [AppComponent]
 })
