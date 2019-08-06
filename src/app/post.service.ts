@@ -40,4 +40,7 @@ export class PostService {
   save(post: Post) {
     this.posts.push(post);
   }
+
+  kiss(id: number) {
+  }
 }
