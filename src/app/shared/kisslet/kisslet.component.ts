@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Post} from '../core/Post';
+import {Post} from '../../core/Post';
 
 @Component({
   selector: 'app-kisslet',

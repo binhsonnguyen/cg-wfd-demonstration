@@ -1,0 +1,55 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h3 class="card-title">Contribute new resource</h3>
+    <form (ngSubmit)="onSubmit()" [formGroup]="editingForm">
+      <div class="form-group">
+        <label for="new-post-title">Title</label>
+        <input [(ngModel)]="editingPost.title"
+               [class.is-invalid]="(!fields.title.pristine || submitted) && fields.title.invalid"
+               aria-label="Title"
+               class="form-control"
+               formControlName="title"
+               id="new-post-title"
+               name="new-post-title"
+               placeholder="Title"
+               type="text">
+        <div *ngIf="fields.title.invalid" class="invalid-feedback">
+          <div *ngIf="fields.title.errors.required">Title is required</div>
+          <div *ngIf="fields.title.errors.minlength">Title is too short.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="new-post-url">URL </label>
+        <input [(ngModel)]="editingPost.url"
+               [class.is-invalid]="(!fields.url.pristine || submitted) && fields.url.invalid"
+               aria-label="URL"
+               class="form-control"
+               formControlName="url"
+               id="new-post-url"
+               name="new-post-url"
+               placeholder="URL"
+               type="url">
+        <div *ngIf="fields.url.invalid" class="invalid-feedback">
+          <div *ngIf="fields.url.errors.required">URL is required</div>
+          <div *ngIf="fields.url.errors.minlength">URL is too short.</div>
+        </div>
+      </div>
+      <div class="form-group form-check">
+        <input [class.is-invalid]="(!fields.sworn.pristine || submitted) && fields.sworn.invalid"
+               class="form-check-input"
+               formControlName="sworn"
+               id="new-post-terms"
+               name="new-post-terms"
+               ngModel
+               type="checkbox">
+        <label for="new-post-terms">I swear this is full of knowledge.</label>
+        <div *ngIf="fields.sworn.invalid" class="invalid-feedback">
+          <div *ngIf="fields.sworn.errors.required">You need to swear.</div>
+        </div>
+      </div>
+      <div class="form-group form-check">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

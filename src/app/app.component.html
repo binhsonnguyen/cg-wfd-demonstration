@@ -1,6 +1,5 @@
 <app-header></app-header>
 <div class="container">
-  <app-posts [posts]="posts"></app-posts>
-  <app-post-create (postEmit)="addPost($event)"></app-post-create>
+  <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

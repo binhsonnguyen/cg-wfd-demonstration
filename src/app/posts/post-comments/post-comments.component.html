@@ -1,0 +1,33 @@
+<div class="card m-2">
+  <div class="card-header">
+    <a class="card-title" href="{{post.url}}" target="_blank">{{post.title}}</a>
+  </div>
+  <div class="card-body d-flex">
+    <div class="input-group input-group-sm">
+      <div class="input-group-prepend">
+        <app-kisslet (kissEmit)="increaseKissedCount(post)" [post]="post"></app-kisslet>
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text kissed">{{post.kissed || 0}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let comment of post.comments" class="card ml-4 m-2">
+  <div class="card-body px-4 py-2">
+    <blockquote class="blockquote mb-0">
+      <p class="small mb-0">{{comment.content}}</p>
+      <footer class="blockquote-footer"><span class="small">{{comment.author}}</span></footer>
+    </blockquote>
+    <div class="input-group input-group-sm">
+      <div class="input-group-prepend">
+        <a (click)="kissComment(comment)" class="input-group-text" href="javascript:void(0);" role="button">
+          <fa-icon [icon]="['far', 'kiss']"></fa-icon>
+        </a>
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text kissed">{{+comment.kissed}}</span>
+      </div>
+    </div>
+  </div>
+</div>

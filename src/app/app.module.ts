@@ -4,27 +4,50 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FooterComponent} from './shared/footer/footer.component';
 import {HeaderComponent} from './shared/header/header.component';
-import {PostsComponent} from './posts/posts.component';
-import {PostCreateComponent} from './posts-create/post-create.component';
+import {PostsListComponent} from './posts/posts-list/posts-list.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faKiss} from '@fortawesome/free-regular-svg-icons';
-import {KissletComponent} from './kisslet/kisslet.component';
+import {KissletComponent} from './shared/kisslet/kisslet.component';
+import {PostsHomeComponent} from './posts/posts-home/posts-home.component';
+import {RouterModule} from '@angular/router';
+import {PostsContributeComponent} from './posts/posts-contribute/posts-contribute.component';
+import {PostCommentsComponent} from './posts/post-comments/post-comments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    PostsComponent,
-    PostCreateComponent,
-    KissletComponent
+    PostsListComponent,
+    KissletComponent,
+    PostsHomeComponent,
+    PostsContributeComponent,
+    PostCommentsComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: PostsHomeComponent
+      },
+      {
+        path: 'news',
+        component: PostsHomeComponent
+      },
+      {
+        path: 'news/:id',
+        component: PostCommentsComponent
+      },
+      {
+        path: 'contrib',
+        component: PostsContributeComponent
+      }
+    ])
   ],
   bootstrap: [AppComponent]
 })

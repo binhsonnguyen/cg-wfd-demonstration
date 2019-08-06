@@ -1,16 +1,21 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Post} from '../core/Post';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Post} from '../../core/Post';
+import {PostService} from '../../post.service';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-post-create',
-  templateUrl: './post-create.component.html'
+  selector: 'app-posts-contribute',
+  templateUrl: './posts-contribute.component.html'
 })
-export class PostCreateComponent implements OnInit {
+export class PostsContributeComponent implements OnInit {
   editingForm: FormGroup;
   editingPost: Post;
   submitted = false;
   @Output() postEmit: EventEmitter<Post> = new EventEmitter<Post>();
+
+  constructor(private postService: PostService, private router: Router) {
+  }
 
   get fields() {
     return this.editingForm.controls;
@@ -32,16 +37,17 @@ export class PostCreateComponent implements OnInit {
       return;
     }
 
-    this.emitPost();
-  }
-
-  private emitPost() {
-    this.postEmit.emit(this.editingPost);
+    this.postService.save(this.editingPost);
+    this.router.navigate(['news']);
     this.refresh();
   }
 
   private refresh() {
     this.submitted = false;
     this.editingPost = new Post();
+    this.submitted = false;
+    this.editingForm.markAsPristine();
+    this.editingForm.markAsUntouched();
+    this.editingForm.updateValueAndValidity();
   }
 }
