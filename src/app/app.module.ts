@@ -28,7 +28,12 @@ import {RouterModule} from '@angular/router';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: PostsHomeComponent
+      }
+    ])
   ],
   bootstrap: [AppComponent]
 })
