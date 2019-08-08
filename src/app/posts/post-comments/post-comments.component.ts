@@ -18,7 +18,9 @@ export class PostCommentsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routerParamMapSubscription = this.activatedRoute.paramMap.subscribe(snapshotParams => {
       const id = snapshotParams.get('id');
-      this.post = this.postService.fetch(+id);
+      this.postService.fetch(+id).subscribe(post => {
+        this.post = post;
+      });
     });
   }
 

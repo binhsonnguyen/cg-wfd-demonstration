@@ -21,8 +21,9 @@ export class PostService {
     return this.http.get<Post[]>(this.postsResourceUrl);
   }
 
-  fetch(id: number): Post {
-    return this.posts.find(value => value.id === id);
+  fetch(id: number): Observable<Post> {
+    const url = Location.joinWithSlash(this.postsResourceUrl, id + '');
+    return this.http.get<Post>(url);
   }
 
   save(post: Post) {
