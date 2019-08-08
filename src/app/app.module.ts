@@ -7,6 +7,7 @@ import {faKiss} from '@fortawesome/free-regular-svg-icons';
 import {AppRoutingModule} from './app-routing.module';
 import {SharedModule} from './shared/shared.module';
 import {PostsModule} from './posts/posts.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {PostsModule} from './posts/posts.module';
     FontAwesomeModule,
     AppRoutingModule,
     PostsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })
