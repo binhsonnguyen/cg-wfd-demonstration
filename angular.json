@@ -9,7 +9,10 @@
       "sourceRoot": "src",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser"
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "main": "src/main.ts"
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
