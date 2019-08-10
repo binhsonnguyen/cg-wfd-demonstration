@@ -14,6 +14,7 @@
             "outputPath": "dist/cg-wfd-demonstration",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json"
           }
         },
