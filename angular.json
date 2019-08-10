@@ -6,7 +6,12 @@
     "cg-wfd-demonstration": {
       "projectType": "application",
       "root": "",
-      "sourceRoot": "src"
+      "sourceRoot": "src",
+      "architect": {
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server"
+        }
+      }
     }
   },
   "defaultProject": "cg-wfd-demonstration"
