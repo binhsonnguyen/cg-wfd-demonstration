@@ -1,6 +1,11 @@
 {
   "name": "cg-wfd-demonstration",
   "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build"
+  },
   "dependencies": {
     "@angular/compiler": "^8.2.1",
     "@angular/core": "^8.2.1"
