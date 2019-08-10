@@ -1,4 +1,7 @@
 {
   "name": "cg-wfd-demonstration",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "devDependencies": {
+    "@angular/cli": "^8.2.1"
+  }
 }
