@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@angular/compiler": "^8.2.1",
-    "@angular/core": "^8.2.1"
+    "@angular/core": "^8.2.1",
+    "@angular/platform-browser-dynamic": "^8.2.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.802.1",
