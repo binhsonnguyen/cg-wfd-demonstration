@@ -5,7 +5,8 @@
   "projects": {
     "cg-wfd-demonstration": {
       "projectType": "application",
-      "root": ""
+      "root": "",
+      "sourceRoot": "src"
     }
   },
   "defaultProject": "cg-wfd-demonstration"
