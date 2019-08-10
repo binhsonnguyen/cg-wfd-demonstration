@@ -11,7 +11,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "main": "src/main.ts"
+            "main": "src/main.ts",
+            "tsConfig": "tsconfig.app.json"
           }
         },
         "serve": {
