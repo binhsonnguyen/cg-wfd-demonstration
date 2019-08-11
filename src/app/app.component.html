@@ -1,7 +1,31 @@
 <h2>Today's article</h2>
 <hr>
 <div>
-  <a href="{{article.url}}" target="_blank">{{article.title}}</a>
+  <fieldset>
+    <legend>Preview</legend>
+    <a href="{{article.url}}" target="_blank">{{article.title}}</a>
+  </fieldset>
+  <fieldset>
+    <legend>Edit</legend>
+    <table>
+      <tr>
+        <td>Title</td>
+      </tr>
+      <tr>
+        <td>
+          <textarea [value]="article.title" cols="70"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>URL</td>
+      </tr>
+      <tr>
+        <td>
+          <textarea [value]="article.url" cols="70" id="url"></textarea>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
 </div>
 <hr>
 @CodeGym, 2019
