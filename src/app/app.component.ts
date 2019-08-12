@@ -1,17 +1,15 @@
 import {Component} from '@angular/core';
 import {ARTICLES} from './ARTICLES';
+import {Article} from './Article';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  articles = ARTICLES;
+  articles: Article[] = ARTICLES;
 
-  editingArticle = {
-    title: '',
-    url: ''
-  };
+  editingArticle: Article = new Article();
 
   addArticle() {
   }
