@@ -12,5 +12,6 @@ export class AppComponent {
   editingArticle: Article = new Article();
 
   addArticle() {
+    this.articles.push(this.editingArticle);
   }
 }
