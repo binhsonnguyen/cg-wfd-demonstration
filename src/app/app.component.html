@@ -20,31 +20,46 @@
     <a aria-controls="new-article-inputs"
        aria-expanded="false"
        class="btn btn-outline-primary"
-       data-toggle="collapse"
-       href="#new-article-inputs"
+       data-target="#modal-new-article"
+       data-toggle="modal"
        role="button">
       Contribute an Article
     </a>
   </p>
-  <div class="card m-2 collapse" id="new-article-inputs">
-    <div class="card-body">
-      <div class="form-group">
-        <label for="new-post-title">Title</label>
-        <input [(ngModel)]="editingArticle.title" aria-label="Title" class="form-control" id="new-post-title"
-               name="new-post-title"
-               placeholder="Title"
-               type="text">
-      </div>
-      <div class="form-group">
-        <label for="new-post-url">URL </label>
-        <input [(ngModel)]="editingArticle.url" aria-label="URL" class="form-control" id="new-post-url"
-               name="new-post-url"
-               placeholder="URL"
-               type="text">
-      </div>
-      <div class="form-group">
-        <p class="small">Preview: <a href="{{editingArticle.url}}" target="_blank">{{editingArticle.title}}</a></p>
-        <button (click)="addArticle()" class="btn btn-success">Add</button>
+  <div aria-hidden="true"
+       aria-labelledby="modal-title-new-article"
+       class="modal fade"
+       id="modal-new-article"
+       role="dialog"
+       tabindex="-1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title-new-article">Contribute an article</h5>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="new-post-title">Title</label>
+            <input [(ngModel)]="editingArticle.title" aria-label="Title" class="form-control" id="new-post-title"
+                   name="new-post-title"
+                   placeholder="Title"
+                   type="text">
+          </div>
+          <div class="form-group">
+            <label for="new-post-url">URL </label>
+            <input [(ngModel)]="editingArticle.url" aria-label="URL" class="form-control" id="new-post-url"
+                   name="new-post-url"
+                   placeholder="URL"
+                   type="text">
+          </div>
+          <div class="form-group">
+            <p class="small">Preview: <a href="{{editingArticle.url}}" target="_blank">{{editingArticle.title}}</a></p>
+            <button (click)="addArticle()" class="btn btn-success">Add</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
