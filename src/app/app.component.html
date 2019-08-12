@@ -16,8 +16,17 @@
       <a class="card-title" href="{{art.url}}" target="_blank">{{art.title}}</a>
     </div>
   </div>
-  <div class="card m-2">
-    <div class="card-header">Contribute an Article</div>
+  <p class="m-2 mt-4">
+    <a aria-controls="new-article-inputs"
+       aria-expanded="false"
+       class="btn btn-outline-primary"
+       data-toggle="collapse"
+       href="#new-article-inputs"
+       role="button">
+      Contribute an Article
+    </a>
+  </p>
+  <div class="card m-2 collapse" id="new-article-inputs">
     <div class="card-body">
       <div class="form-group">
         <label for="new-post-title">Title</label>
